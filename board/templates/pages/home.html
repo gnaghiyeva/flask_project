@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2>{% block title %}Home{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+  <div class="row">
+    {% for job in jobs %}
+    <div class="col-md-4">
+       <div class="card" >
+  <img src="{{ job.img_tag }}" class="card-img-top" alt="Job Image">
+  <div class="card-body">
+    <h5 class="card-title">{{ job.job_title }}</h5>
+    <p class="card-text">{{ job.job_description }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ job.company_name }}</li>
+    <li class="list-group-item">{{ job.salary_range }}</li>
+    
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link"></a>
+    <a href="#" class="card-link"></a>
+  </div>
+</div>
+    </div>
+
+
+
+    {% endfor %}
+  </div>
+{% endblock content %}
